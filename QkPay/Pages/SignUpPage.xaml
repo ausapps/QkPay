@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CarouselPage
+	xmlns="http://xamarin.com/schemas/2014/forms"
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+	x:Class="QkPay.Pages.SignUpPage"
+	xmlns:artina="clr-namespace:UXDivers.Artina.Shared;assembly=UXDivers.Artina.Shared"
+	xmlns:commonViews="clr-namespace:UXDivers.Artina.Grial;assembly=UXDivers.Artina.Grial"
+	BackgroundImage="{ StaticResource SignUpBackgroundImage }"
+	Title="Sign Up">
+
+  <ContentPage x:Name="Page1" StyleId="1">
+    <ScrollView >
+
+      <StackLayout
+        VerticalOptions="CenterAndExpand"
+        Margin="30"
+        >
+
+        <!---PHONE FIELD-->
+        <Entry
+          Text="{Binding UserId}"
+          Margin="10"
+          VerticalOptions="Start"
+          Placeholder="Mobile Number"
+          Keyboard="Telephone"
+          Style="{DynamicResource ArtinaLoginEntryStyle}"
+				        />
+
+        <!---PIN FIELD-->
+        <Entry
+          Text="{Binding Pin}"
+          Margin="10"
+          Placeholder="Pin number"
+          IsPassword="true"
+          Keyboard="Numeric"
+          Style="{DynamicResource ArtinaLoginEntryStyle}"
+          VerticalOptions="StartAndExpand" />
+
+        <!---PIN REPEAT FIELD-->
+        <Entry
+          Text="{Binding PinConfirm}"
+          Margin="10"
+          VerticalOptions="StartAndExpand"
+          Placeholder="Repeat Pin"
+          IsPassword="true"
+          Keyboard="Numeric"
+          Style="{DynamicResource ArtinaLoginEntryStyle}"
+				/>
+
+        <!-- FOOTER -->
+        <Grid
+          HorizontalOptions="Fill"
+          VerticalOptions="End"
+          Margin="10,50,10,10"
+          >
+
+          <artina:Button
+            Style="{DynamicResource SecondaryActionButtonStyle}"
+            HorizontalOptions="Fill"
+            Clicked="Back_Clicked"
+            Text="Cancel" />
+
+          <artina:Button
+            Grid.Column="1"
+            Style="{DynamicResource PrimaryActionButtonStyle}"
+            HorizontalOptions="Fill"
+            Clicked="Next_Clicked"
+            Text="Next" />
+
+        </Grid>
+      </StackLayout>
+    </ScrollView>
+  </ContentPage>
+
+  <ContentPage  x:Name="Page2" StyleId="2">
+    <ScrollView >
+
+      <StackLayout
+        VerticalOptions="CenterAndExpand"
+        Margin="30"
+        >
+
+        <!---NAME FIELD-->
+        <Entry
+            Margin="10"
+          Text="{Binding Name}"
+          Placeholder="Name"
+          Style="{DynamicResource ArtinaLoginEntryStyle}"
+          VerticalOptions="StartAndExpand" />
+
+        <!---SURNAME FIELD-->
+        <Entry
+            Margin="10"
+          Text="{Binding Surname}"
+          Placeholder="Surname"
+          Style="{DynamicResource ArtinaLoginEntryStyle}"
+          VerticalOptions="StartAndExpand" />
+
+        <!---DATE OF BIRTH FIELD-->
+        <Entry
+            Margin="10"
+          Text="{Binding BirthDay}"
+          Placeholder="Birthday"
+          Style="{DynamicResource ArtinaLoginEntryStyle}"
+          VerticalOptions="StartAndExpand" />
+
+        <StackLayout
+          Orientation="Horizontal"
+          Margin="10"
+        >
+          <Label 
+            Text="Gender" 
+            VerticalOptions="Center"/>
+          <Picker SelectedIndex="{Binding SelectedGender}"
+            HorizontalOptions="FillAndExpand"   
+            VerticalOptions="Center">
+            <Picker.Items>
+              <x:String>Male</x:String>
+              <x:String>Female</x:String>
+            </Picker.Items>
+          </Picker>
+        </StackLayout>
+
+        <!---ID FIELD-->
+        <Entry
+          Margin="10"
+          Text="{Binding Passport}"
+          Placeholder="Id / Passport"
+          Style="{DynamicResource ArtinaLoginEntryStyle}"
+          VerticalOptions="StartAndExpand" />
+
+        <!-- FOOTER -->
+        <Grid
+          HorizontalOptions="Fill"
+          VerticalOptions="End"
+          Margin="10,50,10,10"
+          >
+
+          <artina:Button
+            Style="{DynamicResource PrimaryActionButtonStyle}"
+            VerticalOptions="End"
+            Clicked="Back_Clicked"
+            Text="Back" />
+
+          <artina:Button
+            Grid.Column="1"
+            Style="{DynamicResource PrimaryActionButtonStyle}"
+            VerticalOptions="End"
+            Clicked="Next_Clicked"
+            Text="Next" />
+
+        </Grid>
+      </StackLayout>
+    </ScrollView>
+  </ContentPage>
+
+  <ContentPage  x:Name="Page3" StyleId="3">
+
+    <ScrollView >
+
+      <StackLayout
+        VerticalOptions="CenterAndExpand"
+        Margin="30"
+        >
+        <!---IMAGE FIELD-->
+
+        <artina:CircleImage
+            x:Name="avatar"
+            Margin="10"
+            HeightRequest="150"
+            WidthRequest="150"
+            Source="{ StaticResource ThemeAvatarSample0Image }"
+        />
+
+        <StackLayout
+           HorizontalOptions="Fill"
+           VerticalOptions="End"
+           Margin="10"
+              >
+
+          <artina:Button
+             Style="{DynamicResource PrimaryActionButtonStyle}"
+             VerticalOptions="End"
+             Clicked="Take_Clicked"
+             Text="Take Picture" />
+
+        </StackLayout>
+
+        <!-- FOOTER -->
+        <Grid
+          HorizontalOptions="Fill"
+          VerticalOptions="End"
+          Margin="10,60,10,10"
+          >
+
+          <artina:Button
+            Style="{DynamicResource PrimaryActionButtonStyle}"
+            VerticalOptions="End"
+            Clicked="Back_Clicked"
+            Text="Back" />
+          
+          <artina:Button
+            Grid.Column="1"
+            Style="{DynamicResource PrimaryActionButtonStyle}"
+            VerticalOptions="End"
+            Clicked="Next_Clicked"
+            Text="Complete" />
+
+        </Grid>
+      </StackLayout>
+    </ScrollView>
+  </ContentPage>
+
+</CarouselPage>

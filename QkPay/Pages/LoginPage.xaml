@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage
+	xmlns="http://xamarin.com/schemas/2014/forms"
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+	Title="Login"
+	x:Class="QkPay.Pages.LoginPage"
+	xmlns:artina="clr-namespace:UXDivers.Artina.Shared;assembly=UXDivers.Artina.Shared"
+	xmlns:commonViews="clr-namespace:UXDivers.Artina.Grial;assembly=UXDivers.Artina.Grial"
+	BackgroundColor="White"
+	BackgroundImage="{ StaticResource SignUpBackgroundImage }"
+	 >
+
+  <ScrollView>
+    <!-- MAIN CONTAINER -->
+    <StackLayout VerticalOptions="Center" Margin="30">
+
+      <!-- LOGO -->
+      <Image Source="logo.png" Margin="30" WidthRequest="150" HeightRequest="150" />
+
+      <!---FIELDS CONTAINER-->
+
+      <!---EMAIL FIELD-->
+      <Entry
+        Placeholder="Mobile Number"
+        Margin="10"
+        Keyboard="Telephone"
+        Style="{DynamicResource ArtinaLoginEntryStyle}" />
+
+      <!---PASSWORD FIELD-->
+      <Entry
+        Placeholder="Pin"
+        Margin="10"
+        IsPassword="true"
+        Keyboard="Numeric"
+        Style="{DynamicResource ArtinaLoginEntryStyle}"
+        VerticalOptions="StartAndExpand" />
+
+
+      <!-- FOOTER -->
+     
+        <artina:Button
+				  Margin="10,30,10,10"
+	        Style="{DynamicResource PrimaryActionButtonStyle}"
+					VerticalOptions="End"
+          Clicked="LoginClicked"
+					Text="Login" />
+    
+    </StackLayout>
+
+  </ScrollView>
+</ContentPage>
